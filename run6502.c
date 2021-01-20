@@ -17,7 +17,7 @@
  * THE SOFTWARE IS PROVIDED 'AS IS'.  USE ENTIRELY AT YOUR OWN RISK.
  */
 
-/* Last edited: 2005-11-02 01:18:58 by piumarta on margaux.local
+/* Last edited: 2011-02-13 14:39:33 by piumarta on margaux1
  */
 
 #include <stdio.h>
@@ -317,7 +317,7 @@ static int save(M6502 *mpu, word address, unsigned length, const char *path)
 {
   FILE *file= 0;
   int   count= 0;
-  if (!(file= fopen(path, "w")))
+  if (!(file= fopen(path, "wb")))
     return 0;
   while ((count= fwrite(mpu->memory + address, 1, length, file)))
     {

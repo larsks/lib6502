@@ -17,7 +17,7 @@
 #
 # THE SOFTWARE IS PROVIDED 'AS IS'.  USE ENTIRELY AT YOUR OWN RISK.
 
-# last edited: 2010-07-23 12:26:46 by piumarta on margaux1
+# last edited: 2011-02-13 14:42:07 by piumarta on margaux1
 
 CFLAGS = -g -O3
 
@@ -102,7 +102,7 @@ uninstall :  .FORCE
 
 # ----------------------------------------------------------------
 
-PACKAGE_VERSION = 1.1
+PACKAGE_VERSION = 1.2
 PACKAGE_TARNAME = lib6502
 
 TARNAME= $(PACKAGE_TARNAME)-$(PACKAGE_VERSION)
