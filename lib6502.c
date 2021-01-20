@@ -17,7 +17,7 @@
  * THE SOFTWARE IS PROVIDED 'AS IS'.  USE ENTIRELY AT YOUR OWN RISK.
  */
 
-/* Last edited: 2005-11-02 01:18:47 by piumarta on margaux.local
+/* Last edited: 2010-07-23 12:27:51 by piumarta on margaux1
  * 
  * BUGS:
  *   - RTS and RTI do not check the return address for a callback
@@ -215,7 +215,7 @@ enum {
 	int v= (int8_t)A - (int8_t) B - b;						\
 	fetch();									\
 	A= c;										\
-	setNVZC(A & 0x100, ((A & 0x100) > 0) ^ ((v & 0x100) != 0), A == 0, c >= 0);	\
+	setNVZC(A & 0x80, ((A & 0x80) > 0) ^ ((v & 0x100) != 0), A == 0, c >= 0);	\
 	next();										\
       }											\
     else										\
