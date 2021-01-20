@@ -17,7 +17,7 @@
  * THE SOFTWARE IS PROVIDED 'AS IS'.  USE ENTIRELY AT YOUR OWN RISK.
  */
 
-/* Last edited: 2010-07-23 12:27:51 by piumarta on margaux1
+/* Last edited: 2013-06-07 23:03:39 by piumarta on emilia.local
  * 
  * BUGS:
  *   - RTS and RTI do not check the return address for a callback
@@ -547,7 +547,7 @@ enum {
   push(PC >> 8);						\
   push(PC & 0xff);						\
   P |= flagB;							\
-  push(P);							\
+  push(P | flagX);						\
   P |= flagI;							\
   {								\
     word hdlr= getMemory(0xfffe) + (getMemory(0xffff) << 8);	\
@@ -595,7 +595,7 @@ enum {
 #define pha(ticks, adrmode)	phR(ticks, adrmode, A)
 #define phx(ticks, adrmode)	phR(ticks, adrmode, X)
 #define phy(ticks, adrmode)	phR(ticks, adrmode, Y)
-#define php(ticks, adrmode)	phR(ticks, adrmode, P)
+#define php(ticks, adrmode)	phR(ticks, adrmode, P | flagX | flagB)
 
 #define plR(ticks, adrmode, R)			\
   fetch();					\
